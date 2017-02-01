@@ -1,0 +1,19 @@
+{
+  "name": "awengular-generator",
+  "version": "1.0.0",
+  "description": "",
+  "bin": {
+    "awengen": "./awengen.js"
+  },
+  "main": "awengen.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jouderian Nobre",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^1.1.3",
+    "commander": "^2.9.0",
+    "handlebars": "^4.0.6"
+  }
+}
