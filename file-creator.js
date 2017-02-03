@@ -1,29 +1,32 @@
 'use strict'
 
-const utils = require('./utils')
-const fs    = require('fs')
+const utils      = require('./utils')
+const fs         = require('fs')
+const handlebars = require('handlebars')
+const chalk      = require('chalk')
 
-function createFileFromTemplate(templateSrc, templateArgs){
-    fs.readFile(templateSrc, (err, data)=>{
-        if(err){
-            console.log(`${chalk.cyan('Sorry, we couldn\'t find the template file')}`)
-            return
-        }
+function createFileFromTemplate(templateSrc, templateArgs, type){
+    return new Promise((resolve, reject) => {
+        fs.readFile(templateSrc, (err, data)=>{
+            let compiled = handlebars.compile(data.toString())(templateArgs)
 
-        let compiled = handlebars.compile(data.toString())(templateArgs)
-
-        fs.writeFile(utils.getFullPathFile(filename), compiled, (err, data) => {
             if(err){
-                console.log(`${chalk.bgRed('ERROR:')} ${chalk.red('We are not able to save the file')}`)
-            }else{
-                console.log(`${chalk.magenta(templateArgs.name)} ${chalk.cyan('was successful created')} ${chalk.red('S2')}`)
+                reject(err)
+                return
             }
+
+            fs.writeFile(utils.getFullPathFile(templateArgs.filename), compiled, (err, data) => {
+                if(err){
+                    reject(err)
+                }
+
+                resolve()
+            })
         })
     })
 }
 
 function createFolder(folderName){
-    console.log('dentro da parada')
     return new Promise((resolve, reject) => {
         let fullPath = utils.getFullPathFile(folderName)
         fs.mkdirSync(fullPath)

@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('{{moduleName}}', [
+        .module('{{moduleName}}.controller', [
 
         ])
         .controller('{{name}}', {{functionName}});

@@ -1,9 +1,26 @@
-function getFullPathFile(filename){
-    return `${process.cwd()}/${filename}`
+function setupArgsForTemplateFile(name, moduleName, type){
+    let functionName   = lowerCaseFirstLetter(name) + type
+    let controllerName = upperCaseFirstLetter(name) + type
+    let filename       = `${hiphenizeStr(name)}-${lowerCaseFirstLetter(type)}.js`
+
+    return {
+        functionName : functionName,
+        name         : controllerName,
+        moduleName   : moduleName,
+        filename     : filename
+    }
 }
 
-function getFileName(name){
-    return `${hiphenizeStr(name)}-controller.js`
+function lowerCaseFirstLetter(str) {
+    return str.replace(str.charAt(0), str.charAt(0).toLowerCase())
+}
+
+function upperCaseFirstLetter(str) {
+    return str.replace(str.charAt(0), str.charAt(0).toUpperCase())
+}
+
+function getFullPathFile(filename){
+    return `${process.cwd()}/${filename}`
 }
 
 function hiphenizeStr(name){
@@ -15,7 +32,7 @@ function hiphenizeStr(name){
 }
 
 module.exports = {
-    getFileName     : getFileName,
-    getFullPathFile : getFullPathFile,
-    hiphenizeStr    : hiphenizeStr
+    getFullPathFile          : getFullPathFile,
+    hiphenizeStr             : hiphenizeStr,
+    setupArgsForTemplateFile : setupArgsForTemplateFile
 }

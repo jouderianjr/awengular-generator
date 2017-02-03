@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('{{moduleName}}', [
+        .module('{{moduleName}}.service', [
         ])
         .factory('{{name}}', {{functionName}});
 

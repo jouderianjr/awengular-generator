@@ -3,6 +3,7 @@
 
     angular
         .module('{{moduleName}}', [
-
+            '{{moduleName}}.controller',
+            '{{moduleName}}.service'
         ])
 })();
