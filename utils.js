@@ -34,5 +34,7 @@ function hiphenizeStr(name){
 module.exports = {
     getFullPathFile          : getFullPathFile,
     hiphenizeStr             : hiphenizeStr,
-    setupArgsForTemplateFile : setupArgsForTemplateFile
+    setupArgsForTemplateFile : setupArgsForTemplateFile,
+    lowerCaseFirstLetter     : lowerCaseFirstLetter,
+    upperCaseFirstLetter     : upperCaseFirstLetter,
 }
