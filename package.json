@@ -7,7 +7,8 @@
   },
   "main": "awengen.js",
   "scripts": {
-    "test": "istanbul cover node_modules/.bin/_mocha -- -- -u exports -R spec tests/**/* --html"
+    "test": "istanbul cover node_modules/.bin/_mocha -- -- -u exports -R spec tests/**/* --html",
+    "postinstall" : "node postInstall.js"
   },
   "author": "Jouderian Nobre",
   "license": "ISC",
