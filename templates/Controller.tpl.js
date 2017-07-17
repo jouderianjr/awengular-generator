@@ -9,6 +9,7 @@
 
     /* @ngInject */
     function {{functionName}}($scope){
+        var vm = this;
 
         initialize();
 
