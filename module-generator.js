@@ -3,22 +3,13 @@
 const fs            = require('fs')
 const fileGenerator = require('./file-generator')
 const utils         = require('./utils')
+const chalk         = require('chalk')
 
 function generate(args) {
-    let name       = name
-    let moduleName = moduleName 
+    let name       = args.name
+    let moduleName = args.moduleName
 
-    return new Promise((resolve, reject) => {
-        //Should create the folder, controller, service and template
-        fs.mkdir(utils.hiphenizeStr(name), (err, data) => {
-            if(err && err !== '')
-            console.log('err')
-            console.log(err)
-            console.log('data')
-
-            console.log(data)
-        })
-    })
+    console.log(chalk.magenta('Not implemented yet'))
 }
 
 exports.generate = generate
