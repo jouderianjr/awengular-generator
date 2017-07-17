@@ -5,8 +5,8 @@ const fileGenerator = require('./file-generator')
 const utils         = require('./utils')
 
 function generate(args) {
-    let name       = args[0]
-    let moduleName = args[1]
+    let name       = name
+    let moduleName = moduleName 
 
     return new Promise((resolve, reject) => {
         //Should create the folder, controller, service and template

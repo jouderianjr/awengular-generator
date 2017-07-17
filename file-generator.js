@@ -7,8 +7,8 @@ const fileCreator = require('./file-creator')
 
 function generate(data, type){
     let templateSrc = `${__dirname}/templates/${type}.tpl.js`
-    let name = data[0]
-    let moduleName = data[1]
+    let name = data.name
+    let moduleName = data.moduleName 
 
     return new Promise((resolve, reject) => {
         let templateArgs = utils.setupArgsForTemplateFile(name, moduleName, type)
