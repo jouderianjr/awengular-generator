@@ -19,7 +19,10 @@ function upperCaseFirstLetter(str) {
     return str.replace(str.charAt(0), str.charAt(0).toUpperCase())
 }
 
-function getFullPathFile(filename){
+function getFullPathFile(filename, folder){
+    if ( folder ) {
+        return `${process.cwd()}/${folder}/${filename}`
+    }
     return `${process.cwd()}/${filename}`
 }
 

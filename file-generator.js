@@ -7,10 +7,11 @@ const fileCreator = require('./file-creator')
 const chalk       = require('chalk')
 
 function generate(data, type){
+
     const templateSrc  = `${__dirname}/templates/${type}.tpl.js`
-    const name         = data.name
-    const moduleName   = data.moduleName
-    const templateArgs = utils.setupArgsForTemplateFile(name, moduleName, type)
+    let templateArgs = utils.setupArgsForTemplateFile(data.name, data.moduleName, type)
+
+    if ( data.folder ) { templateArgs.folder = data.folder }
 
     fileCreator
         .createFileFromTemplate(templateSrc, templateArgs)

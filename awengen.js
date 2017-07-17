@@ -14,7 +14,7 @@ const moduleGenerator = require('./module-generator')
 
 cli
     .command(
-        'controller <name> <moduleName>',
+        'controller <name> <moduleName> [folder]',
         'Generate an angular controller',
         {},
         (data) => fileGenerator.generate(data, 'Controller')
